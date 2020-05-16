@@ -17,6 +17,16 @@
 
 }
 
+@keyframes fadeInOut {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
 @font-face {
     src: url("fonts/Roboto/Roboto-Regular.ttf");
     font-family: Roboto-Regular;
@@ -114,6 +124,13 @@ h2 {
 a img {
     width: 0.73em;
     padding: 1em 0 0 0.45em;
+}
+
+.warning {
+    color: #ffd24a;
+    opacity: 0;
+    animation: fadeInOut 1.1s infinite;
+    animation-direction: alternate;
 }
 
 #mouse {
