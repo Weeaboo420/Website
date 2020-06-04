@@ -81,13 +81,6 @@ h2 {
     text-align: center;
 }
 
-#master a {
-    margin: 0;
-    padding: 0.5em;
-    text-decoration: none;
-    color: #32a852;    
-}
-
 #master a:hover {
     text-decoration: underline;
 }
@@ -148,12 +141,15 @@ a img {
 .release {
     background-color: #111;    
     margin: 0;
-    padding: 1em 3em;    
+    padding: 1.5em 3em;
 }
 
 .release a {
+    margin: 5em 0 0 0;
     padding: 0;
-    margin: 0 0 0 2.5em;
+    text-decoration: none;
+    color: #32a852;
+    float: right;
 }
 
 #downloads p {
