@@ -1,58 +1,80 @@
-@keyframes fade {
-    0% {
-        opacity: 0; 
-    }
-
-    20% {
-        opacity: 1;
-    }
-
-    80% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-    }
-
-}
-
-@keyframes fadeInOut {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
 @font-face {
     src: url("fonts/Roboto/Roboto-Regular.ttf");
     font-family: Roboto-Regular;
 }
 
-body, html {
+body {
     margin: 0;
     padding: 0;
-    background-color: #131313;
+    
+    /*background-color: #131313;*/
+    background-image: url(img/bg.png);
+    background-repeat: repeat;
+    background-size: 7em;
+    image-rendering: crisp-edges;
+
     font-family: Roboto-Regular;
     color: #ededed;
 }
 
 #master {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-evenly;
 
+    padding: 5em 0 0 0;
+    margin: 0;
+}
+
+#updates-flow {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    
+    margin: 0;
+    padding: 0;
+}
+
+
+.post {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    background-color: #111;
+    margin: 0;
+    padding: 2em 0;
+    min-height: 20em;
+    width: 45em;
+    text-align: left;
+}
+
+.post-title {
+    text-align: center;
     padding: 0;
     margin: 0;
-    background-color: #222;
+}
+
+.post-image {    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    height: 25em;
+
+    padding: 0;
+    margin: 1em 0;
+}
+
+.post-content {
+    margin: 0;
+    padding: 0.8em 1.5em;
 }
 
 h2 {
-    background-color: #151515;
+    background-color: #111;
     margin: 0;
     padding: 0.8em 0;
     width: 100%;
@@ -70,68 +92,32 @@ h2 {
     text-decoration: underline;
 }
 
-#hero {
+#downloads-flow {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-
-    border-top: 0.4em solid #32a852;
-    border-bottom: 0.4em solid #32a852;
-    background-image: url("img/hero.jpg");
-    background-position: center center;
-    background-size: cover;    
-    
-    padding: 0;
-    margin: 0;
-    color: #ffffff;    
-    width: 100%;    
-    height: 100vh;
-}
-
-#hero-inner {
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-#hero::after {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.4);
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    content: "";
-    color: rgba(0, 0, 0, 0);
-}
-
-#downloads {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-
-    text-align: left;
-    background-color: #333333;    
+    justify-content: flex-start;    
     padding: 4em 0;
     margin: 0;
-    width: 100%;
 }
 
 #downloads-table {
     margin: 0;
+    padding: 0;    
+}    
+
+#downloads-title {
+    text-align: center;    
+    margin: 0;
     padding: 0;
-    width: 35em;
-    max-width: 35em;
 }
+
+td {
+    min-width: 30em;
+    max-width: 30em;
+    margin: 0;
+    padding: 0;
+}
+
 
 a img {
     width: 0.73em;
@@ -139,25 +125,10 @@ a img {
 }
 
 .warning {
-    color: #ffd24a;
-    opacity: 0;
-    animation: fadeInOut 1.1s infinite;
-    animation-direction: alternate;
+    color: #ffd24a;    
     margin: 0;
     padding: 0.5em 0;
-}
-
-#mouse {
-    width: 8em;
-    margin: 0;
-    padding: 2em 0 0.7em 0;
-}
-
-#dot {
-    width: 0.4em;
-    margin: 0;
-    padding: 0.5em 0.5em 0 0.5em;
-    animation: fade 2.5s infinite;
+    text-align: center;
 }
 
 #chevron {
@@ -175,7 +146,7 @@ a img {
 }
 
 .release {
-    background-color: #222;    
+    background-color: #111;    
     margin: 0;
     padding: 1em 3em;    
 }
