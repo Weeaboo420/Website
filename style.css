@@ -9,6 +9,8 @@ body {
     
     /*background-color: #131313;*/
     background-image: url(img/bg.png);
+    background-attachment: fixed;
+    background-position: center;
     background-repeat: repeat;
     background-size: 7em;
     image-rendering: crisp-edges;
@@ -43,8 +45,8 @@ body {
     flex-direction: column;
     justify-content: flex-start;
 
-    background-color: #111;
-    margin: 0;
+    background-color: #090909;
+    margin: 0 0 4.2em 0;
     padding: 2em 0;
     min-height: 20em;
     width: 45em;
@@ -57,11 +59,19 @@ body {
     margin: 0;
 }
 
+.post-subtitle {
+    font-weight: bold;
+    display: block;
+    padding: 0 0 1em 0;
+    margin: 0;
+    text-transform: uppercase;
+}
+
 .post-image {    
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-
+    color: rgba(0, 0, 0, 0);
     height: 25em;
 
     padding: 0;
@@ -74,7 +84,7 @@ body {
 }
 
 h2 {
-    background-color: #111;
+    background-color: #090909;
     margin: 0;
     padding: 0.8em 0;
     width: 100%;
@@ -139,7 +149,7 @@ a img {
 }
 
 .release {
-    background-color: #111;    
+    background-color: #090909; 
     margin: 0;
     padding: 1.5em 3em;
 }
