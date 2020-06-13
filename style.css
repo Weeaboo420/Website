@@ -1,3 +1,30 @@
+
+@media only screen and (max-width: 820px) {
+    body {
+      font-size: 0.45em;
+    }
+  }
+
+
+@media only screen and (max-width: 1000px) and (min-width: 820px) {
+    body {
+      font-size: 0.6em;
+    }
+  }
+
+
+@media only screen and (max-width: 1400px) and (min-width: 1000px) {
+    body {
+        font-size: 0.7em;
+    }
+}
+
+@media only screen and (max-width: 1920px) and (min-width: 1400px) {
+    body {
+        font-size: 1em;
+    }
+}
+
 @font-face {
     src: url("fonts/Roboto/Roboto-Regular.ttf");
     font-family: Roboto-Regular;
