@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>C++ Notes</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="prismjs/prism.css">
+        <link rel="stylesheet" type="text/css" href="style.css">        
+    </head>
+<body>
+    <div id="master-container">
+        
+        <div id="about-dim" class="no-select" onclick="ToggleAbout()">.</div>
+        <div id="about"><div id="about-title-bar"><h1 id="about-title">About</h1><div onclick="ToggleAbout()"><img src="close.svg"></div></div>
+        <p>This is a private project created by me (Richard Gustafsson). It's intended to be used as a guide when programming in C++. Maybe one day this will be published on some domain somewhere in the world. Who knows?<br><br>In actuality, I have probably spent more time designing this "small" project than I have been trying to learn C++.</p>
+        </div>
+
+        <div id="page">
+            <div id="sidebar">
+                <div id="title-bar">
+                    <h1>C++ Notes<br><span>as written by Richard Gustafsson</span></h1>            
+                </div>
+
+                <a href="#" class="sidebar-link">Preprocessor directives<br>(Macros)</a>
+                <a href="#classes" class="sidebar-link">Classes</a>
+                <a href="#pointers" class="sidebar-link">Pointers</a>
+                <a href="#" class="sidebar-link">References</a>
+
+                <div id="sidebar-bottom">
+                    <p onclick="ToggleAbout()" class="sidebar-link">About</p>
+                    <span id="credits">Syntax highlighting by <a href="https://prismjs.com/">Prismjs</a></span>
+                </div>
+
+            </div>
+
+            <div id="dummy-sidebar" class="no-select">.</div>
+
+            <div id="main-content-container">
+                <div id="main-content">
+                    <div id="classes" class="anchor no-select">.</div>
+                    <h1 class="subject-title">Classes <span class="category">General programming</span></h1>
+                    <p>Classes in C++ are very similar to classes in C# or Java. Public and private members are grouped together as seen below. There is no real equivalent to a "property" like in C#, instead you would need dedicated getter and setter functions as those below.</p>
+                    <pre><code class="language-cpp">
+class Person
+{
+    private:
+        string _name; 
+        Sex _sex;
+        int _age;
+    public:
+        Person(string name, int age, Sex sex)
+        {
+            _name = name;
+            _age = age;
+            _sex = sex;
+        }
+    
+    string Display() //Return a "display name" of sorts
+    {
+        return _name + " is a " + to_string(_age) + "-year-old " + SexMap.at(_sex);
+    }
+};
+                    </code></pre>
+                    <p>Classes can generally be instantiated in two ways: <br><br><br><span class="note">First method, using pointers and a dereferencer</span></p>
+                    
+                    <pre><code class="language-cpp">
+Person *myPerson = new Person("Naomi", 20, Sex::Female);
+                    </code></pre>
+                    
+                    <p><span class="note">Second method, without using the "new" keyword</span></p>
+                    <pre><code class="language-cpp">
+Person myPerson = Person("Naomi", 20, Sex::Female);
+                    </code></pre>
+
+                    <p>Other than looking somewhat different, this actually changes how we access functions and such inside the object. To access properties and functions we can do this:</p>
+                    <pre><code class="language-cpp">
+//When using the first method. Uses arrow instead of a dot since it's technically a dereferenced pointer:
+myPerson->Display();
+
+//When using the second method, the "normal" way:
+myPerson.Display();
+                    </code></pre>
+
+                    <div id="pointers" class="anchor no-select">.</div>
+                    <h1 class="subject-title">Pointers <span class="category">Memory management</span></h1>
+                    <p>Pointers are weird. They do serve some kind of purpose, though, I guess. A pointer is like a variable, it's just that it can only contain the memory address of another variable.<br><br>Consider the following code:</p>
+                    <pre><code class="language-cpp">
+int myInt = 8;
+void* ptr = &myInt;
+                        </code></pre>
+                        <p>What does this do? We create a normal integer with a value of 8. But the next line looks a little strange, doesn't it?<br>First, we specify the type of the variable as normal, followed by an asterisk. I don't know why there's an asterisk there but it's just what you do when you create pointers.<br><br>Then, we give the pointer the name of "ptr" and assign it to "&myInt" which returns the memory address of the "myInt" variable.
+                        When we add the ampersand sign (&) before any variable we get the memory address of that variable. It is worth noting that when creating instances of custom classes we get back a pointer if we use the "new" keyword like this:</p>
+                        <pre><code class="language-cpp">
+Person *myPerson = new Person("Mike", 32, Sex::Male);                            
+                        </code></pre>
+
+                </div>
+            </div>        
+
+        </div>
+    
+    </div>
+
+    <script src="prismjs/prism.js" type="text/javascript"></script>
+    <script src="main.js"></script>
+</body>
+</html>
