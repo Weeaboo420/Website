@@ -43,15 +43,42 @@ body {
 }
 
 .select-block {
+    position: relative;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
     width: 50%;
-    height: 100%;    
+    height: 100%;
+    color: #fff;
 
     transition: 0.25s ease-in-out background-color;
+    text-decoration: none;
+}
+
+.select-block h1::before {
+    content: '';
+    position: absolute;    
+    height: 3%;
+    width: 0;
+    display: block;
+    
+    padding: 0;
+    top: 50%;
+    bottom: 50%;
+    left: 37.5%;
+
+    background-color: rgba(0, 0, 0, 0);
+    border-bottom: 0.1em solid rgba(255, 255, 255, 0);
+
+    transition: 0.5s ease width, 0.5s ease border-bottom;
+}
+
+.select-block:hover h1::before {    
+    width: 25%;
+    border-bottom: 0.1em solid rgba(255, 255, 255, 1);
 }
 
 #cpp-notes {
