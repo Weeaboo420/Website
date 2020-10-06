@@ -44,19 +44,17 @@ class Person
 {
     private:
         string _name; 
-        Sex _sex;
         int _age;
     public:
-        Person(string name, int age, Sex sex)
+        Person(string name, int age)
         {
             _name = name;
             _age = age;
-            _sex = sex;
         }
     
     string Display() //Return a "display name" of sorts
     {
-        return _name + " is a " + to_string(_age) + "-year-old " + SexMap.at(_sex);
+        return _name + " is " + to_string(_age) + "years old";
     }
 };
                     </code></pre>
