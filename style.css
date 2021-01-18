@@ -3,6 +3,17 @@
     src: url("CppNotes/fonts/NotoSansJP-Medium.otf")
 }
 
+/*Removes that annoying flashing of the background of the subsite buttons*/
+@keyframes initial-fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+} 
+
 body {
     margin: 0;
     padding: 0;
@@ -33,8 +44,10 @@ body {
 #master {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-evenly;
+    align-items: center;    
+
+    background-color: rgba(0, 0, 0, 0);
 
     margin: 0;
     padding: 0;
@@ -50,25 +63,38 @@ body {
     justify-content: center;
     align-items: center;
 
-    width: 50%;
+    margin: 0;
+    
+    width: 100%;
     height: 100%;
-    color: #fff;
 
-    transition: 0.25s ease-in-out background-color;
+    background-color: #111;
+    color: #fff;    
+
+    animation-name: initial-fade-in;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+
+    transition: 0.8s ease background-color;
+
     text-decoration: none;
 }
 
-.select-block h1::before {
-    content: '';
-    position: absolute;    
+.select-block div {
+    font-size: 2.3em;
+
+    margin: 0;
+    padding: 0;
+}
+
+/*Small line that becomes visible and expands when hovering a link*/
+.select-block div span {    
+    display: block;
     height: 3%;
     width: 0;
-    display: block;
     
     padding: 0;
-    top: 50%;
-    bottom: 50%;
-    left: 37.5%;
+    margin: 0;
 
     background-color: rgba(0, 0, 0, 0);
     border-bottom: 0.1em solid rgba(255, 255, 255, 0);
@@ -76,25 +102,21 @@ body {
     transition: 0.5s ease width, 0.5s ease border-bottom;
 }
 
-.select-block:hover h1::before {    
-    width: 25%;
+.select-block:hover div span {        
+    width: 100%;
     border-bottom: 0.1em solid rgba(255, 255, 255, 1);
-}
-
-#cpp-notes {
-    background-color: rgba(156, 52, 81, 0);
 }
 
 #cpp-notes:hover {
     background-color: rgba(156, 52, 81, 1);
 }
 
-#mc-clone {
-    background-color: rgba(71, 148, 43, 0);
-}
-
 #mc-clone:hover {
     background-color: rgba(71, 148, 43, 1);
+}
+
+#checklist:hover {
+    background-color: #3f4c82;
 }
 
 .select-block:hover {    
